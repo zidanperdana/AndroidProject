@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="25dp">
+
+    <ImageView
+        android:id="@+id/imgMovie"
+        android:layout_width="150dp"
+        android:layout_height="170dp"
+        android:src="@drawable/aac"/>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:text="Ayat-Ayat Cinta"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/Deskription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTitle"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:maxLines="5"
+        android:text="Ini adalah kisah cinta. Tapi bukan cuma sekadar kisah cinta yang biasa. Ini tentang bagaimana menghadapi turun-naiknya persoalan hidup dengan cara Islam. Fahri bin Abdillah adalah pelajar Indonesia yang berusaha menggapai gelar masternya di Al-Azhar. Berjibaku dengan panas-debu Mesir. Berkutat dengan berbagai macam target dan kesederhanaan hidup. Bertahan dengan menjadi penerjemah buku-buku agama. Semua target dijalani Fahri dengan penuh antusias kecuali satu: menikah.Fahri adalah laki-laki taat yang begitu lurus. Dia tidak mengenal pacaran sebelum menikah. Dia kurang artikulatif saat berhadapan dengan makhluk bernama perempuan. Hanya ada sedikit perempuan yang dekat dengannya selama ini. Neneknya, Ibunya dan saudara perempuannya.Pindah ke Mesir membuat hal itu berubah. Tersebutlah Maria Girgis. Tetangga satu flat yang beragama Kristen Koptik tetapi mengagumi Al-Qur'an, dan mengagumi Fahri. Kekaguman yang berubah menjadi cinta. Sayang, cinta Maria hanya tercurah dalam diari saja.Lalu ada Nurul. Anak seorang kyai terkenal yang juga mengeruk ilmu di Al-Azhar. Sebenarnya Fahri menaruh hati pada gadis manis ini. Sayang rasa mindernya yang hanya anak keturunan petani membuatnya tidak pernah menunjukkan rasa apa pun pada Nurul. Sementara Nurul pun menjadi ragu dan selalu menebak-nebak.Setelah itu ada Noura, juga tetangga yang selalu disiksa Ayahnya sendiri. Fahri berempati penuh dengan Noura dan ingin menolongnya. Sayang hanya empati saja. Tidak lebih. Namun Noura yang mengharap lebih. Dan nantinya ini menjadi masalah besar ketika Noura menuduh Fahri memperkosanya.Terakhir muncullah Aisha. Si mata indah yang menyihir Fahri. Sejak sebuah kejadian di metro, saat Fahri membela Islam dari tuduhan kolot dan kaku, Aisha jatuh cinta pada Fahri. Dan Fahri juga tidak bisa membohongi hatinya."
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/aac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:layout_below="@id/Deskription"
+        android:text="Watch Trailer Now"
+        android:onClick="playAyatAyatCintaTrailer"/>
+
+    <ImageView
+        android:id="@+id/imgMovie2"
+        android:layout_width="150dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="200dp"
+        android:src="@drawable/hbb_ai"/>
+
+    <TextView
+        android:id="@+id/tvTitle2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imgMovie"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="200dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:text="Habibie Ainun"/>
+
+    <TextView
+        android:id="@+id/Deskription2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTitle"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="210dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:maxLines="5"
+        android:textColor="@color/black"
+        android:text="Ini adalah kisah tentang apa yang terjadi bila kau menemukan belahan hatimu. Kisah tentang cinta pertama dan cinta terakhir. Kisah tentang Presiden ketiga Indonesia dan ibu negara. Kisah tentang Habibie dan Ainun. Rudy Habibie seorang jenius ahli pesawat terbang yang punya mimpi besar: berbakti kepada bangsa Indonesia dengan membuat truk terbang untuk menyatukan Indonesia. Sedangkan Ainun adalah seorang dokter muda cerdas yang dengan jalur karir terbuka lebar untuknya. Pada tahun 1962, dua kawan SMP ini bertemu lagi di Bandung. Habibie jatuh cinta seketika pada Ainun yang baginya semanis gula. Tapi Ainun, dia tak hanya jatuh cinta, dia iman pada visi dan mimpi Habibie. Mereka menikah dan terbang ke Jerman. Punya mimpi tak akan pernah mudah. Habibie dan Ainun tahu itu. Cinta mereka terbangun dalam perjalanan mewujudkan mimpi. Dinginnya salju Jerman, pengorbanan, rasa sakit, kesendirian serta godaan harta dan kuasa saat mereka kembali ke Indonesia mengiringi perjalanan dua hidup menjadi satu. Bagi Habibie, Ainun adalah segalanya. Ainun adalah mata untuk melihat hidupnya. Bagi Ainun, Habibie adalah segalanya, pengisi kasih dalam hidupnya. Namun setiap kisah mempunyai akhir, setiap mimpi mempunyai batas. Kemudian pada satu titik, dua belahan jiwa ini tersadar; Apakah cinta mereka akan bisa terus abadi?" />
+    <Button
+        android:id="@+id/hbb_ai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:layout_below="@id/Deskription2"
+        android:text="Watch Trailer Now"
+        android:onClick="playHabibieAinunTrailer"/>
+
+    <ImageView
+        android:id="@+id/imgMovie3"
+        android:layout_width="150dp"
+        android:layout_height="175dp"
+        android:layout_marginTop="400dp"
+        android:src="@drawable/aadc"/>
+
+    <TextView
+        android:id="@+id/tvTitle3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imgMovie"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="400dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:text="Ada Apa Dengan Cinta"/>
+
+    <TextView
+        android:id="@+id/Deskription3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTitle"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="410dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:maxLines="5"
+        android:textColor="@color/black"
+        android:text="Seorang gadis SMA populer harus memilih apakah ia ingin tetap menjadi bagian dari gengnya atau jatuh cinta pada anak lelaki yang mencintai sastra di sekolahnya." />
+
+    <Button
+        android:id="@+id/aadc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:layout_below="@id/Deskription3"
+        android:text="Watch Trailer Now"
+        android:onClick="playAdaApaDenganCintaTrailer"/>
+</RelativeLayout>
