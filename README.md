@@ -148,3 +148,31 @@ Metode ini menawarkan fungsionalitas perubahan warna yang sesuai dengan setiap p
 
 ## <h1 align="center">Pesan<h1>
 
+Kode ini adalah bagian dari sebuah aplikasi Android yang terdiri dari dua aktivitas (MainActivityOne dan MainActivitySecond) dan digunakan untuk berinteraksi antaraktivitas.
+
+
+
+Kode ini menciptakan pengalaman pengguna di mana pengguna dapat memasukkan pesan di MainActivityOne, mengirimkannya ke MainActivitySecond melalui tombol, dan menampilkan balasan di MainActivityOne setelah aktivitas kedua selesai.
+
+## <h1 align="center">Menu<h1>
+
+Menu ini adalah bagian dari sebuah aplikasi Android yang mengimplementasikan aktivitas menu dengan menggunakan CardView untuk setiap opsi menu. Kita dapat memilih aplikasi-aplikasi yang kita buat, dengan menggunakan metode intent. Berikut adalah penjelasannya:
+
+    Deklarasi Variabel: tombolSatu, tombolDua, ..., tombolDelapan: Variabel yang merepresentasikan CardView untuk setiap opsi menu.
+
+Pengaturan Tombol:
+
+Setiap tombol (tombolSatu hingga tombolDelapan) memiliki OnClickListener yang memulai aktivitas tertentu ketika tombol tersebut diklik. Aktivitas yang dimulai bervariasi dari MainActivity hingga ViewPagerActivity, dan bahkan membuka aplikasi Google Maps untuk menavigasi ke "Universitas Pelita Bangsa" pada tombol tujuh. Kode ini memberikan pengguna akses ke berbagai fitur dan aktivitas dalam aplikasi melalui menu dengan menggunakan CardView sebagai elemen UI yang responsif terhadap sentuhan.
+
+## <h1 align="center">Sinopsis_Trailer<h1>
+
+
+
+
+
+
+## <h1 align="center">Splash<h1>
+
+## <h1 align="center">Fragment<h1>
+
+## <h1 align="center">Menu<h1>
