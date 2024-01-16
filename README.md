@@ -379,5 +379,8 @@ ViewPagerActivity ViewPagerActivity mengelola daftar fragmen yang akan ditampilk
         }
         return super.onOptionsItemSelected(item);
 
+## <h1 align="center">Lampiran<h1>
+
+![image](https://github.com/zidanperdana/AndroidProject/assets/116040175/39316e6b-287e-4e10-852d-76f98d3bd28b)
 
 ## <h1 align="center">THANK YOU<h1>
