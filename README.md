@@ -164,15 +164,220 @@ Pengaturan Tombol:
 
 Setiap tombol (tombolSatu hingga tombolDelapan) memiliki OnClickListener yang memulai aktivitas tertentu ketika tombol tersebut diklik. Aktivitas yang dimulai bervariasi dari MainActivity hingga ViewPagerActivity, dan bahkan membuka aplikasi Google Maps untuk menavigasi ke "Universitas Pelita Bangsa" pada tombol tujuh. Kode ini memberikan pengguna akses ke berbagai fitur dan aktivitas dalam aplikasi melalui menu dengan menggunakan CardView sebagai elemen UI yang responsif terhadap sentuhan.
 
-## <h1 align="center">Sinopsis_Trailer<h1>
+## <h1 align="center">Map<h1>
 
+Tulis kode berikut di dalam MainActivity
 
-
-
-
+    findViewById(R.id.cdMenu6).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Example location: Jakarta, Indonesia
+                Uri geoLocation = Uri.parse("geo:-6.2088,106.8456");
+                openMaps(geoLocation);
+            }
+Maka ketika di buka, langsung mengarah ke google map
 
 ## <h1 align="center">Splash<h1>
 
+Implementasi dari sebuah Splash Screen pada aplikasi, berguna sebagai intro aplikasi. Berikut adalah deskripsi singkat bagian-vbagian kode:
+
+    public class SplashScreen extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(new Intent(SplashScreen.this, MainActivity.class));
+                finish();
+            }
+        }, 2500);
+    }
+    }
+
+
+
 ## <h1 align="center">Fragment<h1>
 
-## <h1 align="center">Menu<h1>
+ViewPagerAdapter ViewPagerAdapter adalah sebuah kelas yang mengimplementasikan FragmentPagerAdapter pada aplikasi Android. Fungsi utamanya adalah mengelola dan menyediakan tampilan fragmen untuk ditampilkan dalam suatu ViewPager.
+
+ViewPagerActivity ViewPagerActivity mengelola daftar fragmen yang akan ditampilkan dalam ViewPager. Ini bisa termasuk membuat instance fragmen, menambahkan fragmen ke dalam ViewPagerAdapter, dan mengatur judul/judul halaman untuk setiap fragmen.
+
+        @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_movie);
+
+        Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getColor(R.color.white)));
+
+        tabLayout = findViewById(R.id.tab);
+        viewPager2 = findViewById(R.id.view);
+        adapter = new ViewAdapter(this);
+        viewPager2.setAdapter(adapter);
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager2.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+        class Halaman extends FragmentStatePagerAdapter {
+            Context context;
+            int jumlah_tab;
+
+            Halaman(Context context, FragmentManager fm, int jml_tab)
+            {
+                super(fm);
+                this.context=context;
+                this.jumlah_tab=jml_tab;
+            }
+
+            @NonNull
+            @Override
+            public Fragment getItem(int posisition){
+                switch (posisition){
+                    case 0:return new ActionFragment();
+                    case 1:return new HororFragment();
+                    case 2:return new RomanceFragment();
+                }
+                return null;
+            }
+
+            @Override
+            public int getCount(){
+                return jumlah_tab;
+            }
+        }
+
+        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                tabLayout.getTabAt(position).select();
+            }
+        });
+
+    }
+    }
+
+## <h1 align="center">Sinopsis_Trailer<h1>
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_vidio_player);
+
+        // Get the video URI from the intent
+        String videoPath = getIntent().getStringExtra("VIDEO_PATH");
+        Uri uri = Uri.parse(videoPath);
+
+        // Set up VideoView
+        videoView = findViewById(R.id.videoView); // Inisialisasi variabel videoView
+        videoView.setVideoURI(uri);
+
+        // Set up MediaController
+        MediaController mediaController = new MediaController(this);
+        mediaController.setAnchorView(videoView);
+        videoView.setMediaController(mediaController);
+
+        // Start playing the video
+        videoView.start();
+
+        // Get the original orientation
+        originalOrientation = getResources().getConfiguration().orientation;
+
+        // Adjust video layout based on the original orientation
+        adjustVideoLayout(originalOrientation);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Detect orientation changes and adjust VideoView layout
+        int currentOrientation = getResources().getConfiguration().orientation;
+        if (currentOrientation != originalOrientation) {
+            adjustVideoLayout(currentOrientation);
+            originalOrientation = currentOrientation;
+        }
+    }
+
+    private void adjustVideoLayout(int orientation) {
+        if (orientation == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE ||
+                orientation == ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE) {
+            // Landscape mode
+            setFullscreen(true);
+        } else {
+            // Portrait or other orientations
+            setFullscreen(false);
+        }
+    }
+
+    private void setFullscreen(boolean fullscreen) {
+        if (fullscreen) {
+            // Hide action bar
+            if (getSupportActionBar() != null) {
+                getSupportActionBar().hide();
+            }
+
+            // Set VideoView layout parameters for fullscreen
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.MATCH_PARENT
+            );
+            params.addRule(RelativeLayout.CENTER_IN_PARENT);
+            videoView.setLayoutParams(params);
+
+            // Hide navigation bar and status bar
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_FULLSCREEN |
+                            View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+                            View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        } else {
+            // Show action bar
+            if (getSupportActionBar() != null) {
+                getSupportActionBar().show();
+            }
+
+            // Set VideoView layout parameters for normal mode
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+            );
+            params.addRule(RelativeLayout.CENTER_IN_PARENT);
+            videoView.setLayoutParams(params);
+
+            // Show navigation bar and status bar
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_VISIBLE);
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_vidio_player, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.action_back) {
+            // Tambahkan logika untuk kembali ke halaman sebelumnya atau finish activity
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+
+
+## <h1 align="center">THANK YOU<h1>
